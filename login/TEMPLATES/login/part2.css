@@ -1,0 +1,13 @@
+#gradient:after {
+  content: "";
+  position: absolute;
+  background: #E9E2D0;
+  left: 33.75%;
+  margin-top: -150px;
+  padding-left: 20px;
+  margin-left: 0px;
+  border-radius: 5px;
+  width: 30%;
+  height: 70%;
+  z-index: -1;
+}

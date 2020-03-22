@@ -1,0 +1,71 @@
+{% extends "basetemplate/base.html" %}
+{%block body_block %}
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border: 1px solid #dddddd;
+    width: 95%;
+}
+
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+
+    padding: 8px;
+
+}
+td {
+
+
+text-align: justify;
+    padding: 8px;
+border: 1px solid #dddddd;
+
+
+}
+.ol{
+list-style-type: decimal;
+padding-left: 32px;
+margin-bottom: 0px;}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+</style>
+<h1 style="text-align: center; font-weight:bold;">List of Loggedin Students</h1>
+
+
+
+<table>
+
+  <tr>
+    
+  <th>Username</th>
+  <th>Roll Number</th>
+  <th>Status</th></tr>
+  {% for user in loggedinuserlist %}
+
+  {%if user.is_superuser%}
+
+  {%else%}
+
+ <tr>
+<td>{{user.username}}</td>
+<td>{{user.rollnumber}}</td>
+<td>{{user.attendence}}</td>
+</tr>
+    {% endif %}
+
+      {% endfor %}
+
+</table>
+
+
+
+
+
+
+
+
+{%endblock %}

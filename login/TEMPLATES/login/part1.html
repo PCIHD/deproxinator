@@ -1,0 +1,43 @@
+{% extends "basetemplate/base.html"}
+{%block body_block %}
+
+
+<form action="{{%url 'login:registered'%}}" style="border:1px solid #ccc"method='post'>
+{% csrf_token %}
+  <link rel="stylesheet" href="C:\Users\athar\OneDrive\Desktop\Django\CSS_levelOne\part2.css">
+  <div class="container">
+    <h1>REGISTER</h1>
+    <hr>
+
+    <label for="First_Name"><b>First Name</b></label>
+    <input type="text" placeholder="Enter First Name" name="fullname" required>
+
+    <label for="Last_Name"><b>Last Name</b></label>
+    <input type="text" placeholder="Enter Last Name" name="fullname" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <label for="psw-repeat"><b>Confirm Password</b></label>
+    <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
+
+    <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </div>
+</form>
+
+
+
+
+{% end_block %}

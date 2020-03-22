@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "basetemplate/base.html" %}
+{% block body_block %}
+<div class = "w3-display-middle">
+<h1 align = "center">Login To Your Account</h1>
+
+
+  <form action="{%url 'login:login' %}"    method="post">
+        {% csrf_token %}
+
+      <div class="input-container" style="color:black;">
+
+        <i class="fa fa-user-circle-o icon" style="font-size:60px;color:white;background-color:black;"></i>
+        <input class="input-field w3-animate-input" style="width:33%"  type="text1" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder = 'Username'" required name="username">
+      </div>
+      <div class='input-container'  style = "color:black;">
+        <span class="glyphicon glyphicon-lock icon" style="font-size:60px;color:white;background-color:black;"></span>
+        <input class="input-field w3-animate-input" style="width:33%;-webkit-text-security: circle;" type="password1" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder = 'Password'"  name="password">
+      </div>
+
+      <button type="submit" class="w3-button1 w3-light-grey w3-padding-large">
+      <i class="fa fa-paper-plane"></i> Login
+          </button>
+    </form>
+
+</div>
+
+
+{% endblock %}

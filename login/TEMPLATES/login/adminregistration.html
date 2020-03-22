@@ -1,0 +1,33 @@
+{% extends "basetemplate/base.html" %}
+{% load static %}
+
+{% block body_block %}
+
+
+<div class="w3-container w3-white w3-text-brown w3-margin" style="font-size: 20px ; text-align:left; " >
+
+      {% if registered %}
+        <h1>Thank you for registering!</h1>
+      {% else %}
+        <h1 style="text-align:center">Register Here</h1>
+        <h3 style="text-align:center">Fill out the form below.(All the fields are mandatory)</h3>
+          </div>
+      
+              <div class="w3-container w3-white w3-text-brown w3-margin" style="font-size: 20px ; text-align:left; " >
+        <form enctype="multipart/form-data" method="POST">
+          {% csrf_token %}
+          {{ user_form.as_p }}
+          {{ profile_form.as_p}}
+          <button type="submit" class="w3-button1 w3-light-grey w3-padding-large">
+          <i class="fa fa-sign-in"></i> Register
+              </button>
+
+        </form>
+
+      {% endif %}
+
+
+
+  </div>
+
+{% endblock %}
